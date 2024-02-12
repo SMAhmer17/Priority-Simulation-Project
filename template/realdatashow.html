@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333333;
+            text-align: center;
+        }
+
+        p {
+            color: #555555;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result:</h1>
+        {% block content %} 
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <p>Arrival Times: {{arrival_times}}</p> 
+        <p>Service Times: {{service_times}}</p> 
+        <p>Priorities: {{priorities}} </p> 
+        <p>Start Times: {{start_times}}</p> 
+        <p>End Times: {{end_times}} </p>
+        <p>Waiting Times: {{waiting_times}}</p>
+        <p>Turnaround Times: {{turnaround_times}}</p> 
+        <p>Response Times: {{response_times}}</p>
+        <p>
+            <img src="data:image/png;base64,{{ plot_data1 }}" alt="Matplotlib Plot" />
+        </p>
+        {% endblock %}
+    </div>
+</body>
+</html>
